@@ -6,6 +6,7 @@ I build an app with a direct and powerful purpose. It does all of the things tha
 Author: Qutadah Almomani
  Resources for class -06:
 
+
  
  [dcode channel](https://www.youtube.com/channel/UCjX0FtIZBBVD3YoCcxnDC4g)
 
@@ -19,5 +20,6 @@ Author: Qutadah Almomani
 
  [w3schools](https://www.w3schools.com/)
  [stackoverflow](https://stackoverflow.com/)
+ [The Coding Bus](https://www.youtube.com/channel/UCyNJURC5bvqIQ9vO9PBrYrA)
 
 Rana Abu Samhan helped me in for loop and function
