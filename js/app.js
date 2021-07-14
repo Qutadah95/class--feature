@@ -91,6 +91,7 @@ Cookes.prototype.main = function () {
     let tdElemant3 = document.createElement('td');
     trElemant.appendChild(tdElemant3);
     tdElemant3.textContent = this.total;
+    this.total=0;
 }// for the total and the total for total
 function footer() {
     let trElemant = document.createElement('tr');
