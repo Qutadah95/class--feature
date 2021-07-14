@@ -66,7 +66,7 @@ function hedar() {
     thElemant.textContent = ('Name');
 
     for (let i = 0; i < hours.length; i++) {
-       let thElemant = document.createElement('th');
+        let thElemant = document.createElement('th');
         trElemant.appendChild(thElemant);
         thElemant.textContent = (hours[i]);
 
@@ -82,39 +82,39 @@ Cookes.prototype.main = function () {
     let tdElemant = document.createElement('td');
     trElemant.appendChild(tdElemant);
     trElemant.textContent = this.location;
- for (let i = 0; i < hours.length; i++) {
-    let tdElemant2 = document.createElement('td');
-    trElemant.appendChild(tdElemant2);
-    tdElemant2.textContent = this.avgCookiesPerHours[i];
-     
- }
- let tdElemant3 = document.createElement('td');
- trElemant.appendChild(tdElemant3);
- tdElemant3.textContent = this.total;
+    for (let i = 0; i < hours.length; i++) {
+        let tdElemant2 = document.createElement('td');
+        trElemant.appendChild(tdElemant2);
+        tdElemant2.textContent = this.avgCookiesPerHours[i];
+
+    }
+    let tdElemant3 = document.createElement('td');
+    trElemant.appendChild(tdElemant3);
+    tdElemant3.textContent = this.total;
 }// for the total and the total for total
-function footer(){
-let trElemant=document.createElement('tr');
-table.appendChild(trElemant);
-let thElemant4 = document.createElement('th');
- trElemant.appendChild(thElemant4);
- thElemant4.textContent = 'Totals';
- let totalOfSum=0;
- for (let i = 0; i < hours.length; i++) {
-    let sum=0;
-     for (let j = 0; j < shop.length; j++) {
-         
-   
- sum+=shop[j].avgCookiesPerHours[i];
- totalOfSum+=shop[j].avgCookiesPerHours[i];
- 
-     }
-     let thElemant5 = document.createElement('th');
-     trElemant.appendChild(thElemant5);
-     thElemant5.textContent = sum;
- }
- let thElemant6 = document.createElement('th');
-     trElemant.appendChild(thElemant6);
-     thElemant6.textContent = totalOfSum;
+function footer() {
+    let trElemant = document.createElement('tr');
+    table.appendChild(trElemant);
+    let thElemant4 = document.createElement('th');
+    trElemant.appendChild(thElemant4);
+    thElemant4.textContent = 'Totals';
+    let totalOfSum = 0;
+    for (let i = 0; i < hours.length; i++) {
+        let sum = 0;
+        for (let j = 0; j < shop.length; j++) {
+
+
+            sum += shop[j].avgCookiesPerHours[i];
+            totalOfSum += shop[j].avgCookiesPerHours[i];
+
+        }
+        let thElemant5 = document.createElement('th');
+        trElemant.appendChild(thElemant5);
+        thElemant5.textContent = sum;
+    }
+    let thElemant6 = document.createElement('th');
+    trElemant.appendChild(thElemant6);
+    thElemant6.textContent = totalOfSum;
 
 }
 
@@ -129,6 +129,29 @@ for (let i = 0; i < shop.length; i++) {
 
 footer();
 
+let form = document.getElementById('form');
+form.addEventListener('submit', submitter);
 
 
 
+function submitter(event) {
+    event.preventDefault();
+    let name = event.target.locationName.value;
+    let min = event.target.minimam.value;
+    let max = event.target.maximam.value;
+    let avg = event.target.avgCookes.value;
+    let newShop = new Cookes(name, min, max, avg);
+
+    table.textContent='';
+
+    hedar();
+
+    for (let i = 0; i < shop.length; i++) {
+        shop[i].randomNumber();
+        shop[i].getCookies();
+        shop[i].main();
+    }
+    
+    footer();
+
+}
