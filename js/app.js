@@ -138,9 +138,9 @@ form.addEventListener('submit', submitter);
 function submitter(event) {
     event.preventDefault();
     let name = event.target.locationName.value;
-    let min = event.target.minimam.value;
-    let max = event.target.maximam.value;
-    let avg = event.target.avgCookes.value;
+    let min = parseInt(event.target.minimam.value) ;
+    let max = parseInt(event.target.maximam.value) ;
+    let avg = parseFloat(event.target.avgCookes.value) ;
     let newShop = new Cookes(name, min, max, avg);
 
     table.textContent='';
